@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "journaly"
+version = "0.1.0"
+description = "A journal app to save memories"
+authors = ["Franz Guzmán <fguzman@stackbuilders.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "^4.1.3"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^22.10.0"
+flake8 = "^5.0.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
