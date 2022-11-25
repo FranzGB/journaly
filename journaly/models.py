@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Journal(models.Model):
@@ -6,6 +7,7 @@ class Journal(models.Model):
     content_description = models.TextField(
         max_length=400, blank=False, default="A generic journal"
     )
+    slug = models.SlugField(max_length=50, unique=True, null=True)
 
     class Meta:
         ordering = ["journal_title"]
@@ -13,6 +15,8 @@ class Journal(models.Model):
     def __str__(self):
         return self.journal_title
 
+    def get_absolute_url(self):
+        return reverse("journal-entry-list", kwargs={"slug": self.slug})
 
 class JournalEntry(models.Model):
     title = models.CharField(max_length=100, blank=False)

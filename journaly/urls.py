@@ -20,6 +20,10 @@ from . import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("journals/", views.JournalView.as_view(), name="journals"),
-    path("journal/<int:pk>", views.JournalEntryView.as_view(), name="journal"),
+    path(
+        "journal/<slug:slug>",
+        views.JournalEntryView.as_view(),
+        name="journal-entry-list",
+    ),
     path("__reload__/", include("django_browser_reload.urls")),
 ]
