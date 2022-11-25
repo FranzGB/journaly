@@ -2,14 +2,13 @@ from django.db import models
 
 
 class Journal(models.Model):
-    title = models.CharField(max_length=100, blank=False)
+    journal_title = models.CharField(max_length=100, blank=False)
     content_description = models.TextField(
         max_length=400, blank=False, default="A generic journal"
     )
-    date_modified = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ["date_modified"]
+        ordering = ["journal_title"]
 
     def __str__(self):
         return self.title
