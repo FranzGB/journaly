@@ -1,10 +1,12 @@
-{% block content %}
-<h2>All Journal</h2>
-<a href=""><button class="btn" type="submit">Add a New Journal</button></a>
-{% for journal in journal_list %}
-<ul>
+{% extends "base.html" %}
+
+  {% block content %}
+  <h2>All Journal</h2>
+  <a href=""><button class="btn" type="submit">Add a New Journal</button></a>
+  {% for journal in journal_list %}
+  <ul>
     <li><a href="">{{ journal.journal_title }}</a></li>
-    <li>{{ journal.content_description  | truncatechars: 120}}</li>
-</ul>
-{% endfor %}
-{% endblock %}
+    <li>{{ journal.content_description | truncatechars: 120}}</li>
+  </ul>
+  {% endfor %}
+  {% endblock %}

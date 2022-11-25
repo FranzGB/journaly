@@ -19,6 +19,6 @@ from . import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("journal/list", views.JournalListView.as_view(), name="journallist"),
+    path("journal/", views.base, name="base"),
     path("__reload__/", include("django_browser_reload.urls")),
 ]
