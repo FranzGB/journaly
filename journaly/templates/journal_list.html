@@ -1,0 +1,11 @@
+{% block content %}
+<h2>All Journal Entries</h2>
+<a href=""><button class="btn" type="submit">Add a New Entry</button>
+{% for journal in journal_list %}
+<ul>
+    <li><a href="">{{ journal.title }}</a></li>
+    <li>{{ journal.body  | truncatechars: 120}}</li>
+    <li>{{ journal.date }}</li>
+</ul>
+{% endfor %}
+{% endblock %}
