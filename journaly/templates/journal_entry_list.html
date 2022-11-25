@@ -1,5 +1,6 @@
+{% extends "base.html" %}
 {% block content%}
-<h2> All Journal Entries</h2>
+<h2> All {{ sup}} Entries</h2>
 <a href=""><button class="btn" type="submit">Add a New Journal Entry</button></a>
 {% for entry in journal_entry_list %}
 <ul>

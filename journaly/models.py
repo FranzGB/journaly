@@ -11,7 +11,7 @@ class Journal(models.Model):
         ordering = ["journal_title"]
 
     def __str__(self):
-        return self.title
+        return self.journal_title
 
 
 class JournalEntry(models.Model):
