@@ -1,0 +1,11 @@
+{% block content%}
+<h2> All Journal Entries</h2>
+<a href=""><button class="btn" type="submit">Add a New Journal Entry</button></a>
+{% for entry in journal_entry_list %}
+<ul>
+  <li><a href="">{{ entry.title }}</a></li>
+  <li>{{ entry.body}}</li>
+  <li>{{ entry.date_created }}</li>
+</ul>
+{% endfor %}
+{% endblock %}
