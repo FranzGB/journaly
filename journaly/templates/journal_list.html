@@ -10,5 +10,7 @@
       <a class="underline hover:text-2xl text-xl" href="{{ journal.get_absolute_url }}">{{ journal.journal_title }}</a></li>
       <p>{{ journal.content_description | truncatechars:120 }}</p>
     </div>
+    {% empty %}
+    <p class="text-center text-2xl py-4">No journals yet</p>
     {% endfor %}
 {% endblock %}

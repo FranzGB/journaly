@@ -22,7 +22,7 @@ urlpatterns = [
     path("journals/", views.JournalView.as_view(), name="journals"),
     path(
         "journal/<slug:slug>",
-        views.JournalEntryView.as_view(),
+        views.JournalEntryListView.as_view(),
         name="journal-entry-list",
     ),
     path("__reload__/", include("django_browser_reload.urls")),

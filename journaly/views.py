@@ -1,5 +1,5 @@
 from .models import Journal, JournalEntry
-from django.views.generic import ListView, TemplateView
+from django.views.generic import ListView, DetailView
 
 
 class JournalView(ListView):
@@ -14,7 +14,16 @@ class JournalView(ListView):
     num_entries = JournalEntry.objects.all().count()
 
 
-class JournalEntryView(ListView):
+class JournalEntryListView(ListView):
     template_name = "journal_entry_list.html"
     model = JournalEntry
     context_object_name = "journal_entry_list"
+
+
+class JournalEntryView(DetailView):
+    template_name = "journal_entry.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["journal_entry"] = JournalEntry.objects.get(pk=kwargs["pk"])
+        return context

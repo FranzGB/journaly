@@ -9,5 +9,7 @@
   <li>{{ entry.body}}</li>
   <li>{{ entry.date_created }}</li>
 </ul>
+{% empty %}
+<p class="text-center text-2xl py-4">No entries yet</p>
 {% endfor %}
 {% endblock %}
