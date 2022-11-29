@@ -9,9 +9,9 @@ class JournalView(ListView):
     model = Journal
     context_object_name = "journal_list"
 
-    # Generate counts of some of the main objects
-    num_journals = Journal.objects.all().count()
-    num_entries = JournalEntry.objects.all().count()
+    # # Generate counts of some of the main objects
+    # num_journals = Journal.objects.all().count()
+    # num_entries = JournalEntry.objects.all().count()
 
 
 class JournalEntryListView(ListView):

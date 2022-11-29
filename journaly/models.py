@@ -18,7 +18,9 @@ class Journal(models.Model):
     def get_absolute_url(self):
         return reverse("journal-entry-list", kwargs={"slug": self.slug})
 
+
 class JournalEntry(models.Model):
+    id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=100, blank=False)
     body = models.TextField()
     date_created = models.DateTimeField(auto_now_add=True)
