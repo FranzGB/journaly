@@ -1,0 +1,11 @@
+{% extends "base.html" %} {% block content %}
+<a class="p-2 rounded-md shadow-md  bg-red-600 hover:bg-red-800 text-slate-200" href=" ">Back</a>
+<a href=""><button class="p-2 rounded-md shadow-md  bg-blue-800 hover:bg-blue-600 text-slate-200" type="submit">Edit</button></a>
+<div class="">
+  <div class="" id="entry-header">
+    <h1 class="text-2xl font-bold text-center">{{ journal_entry.title }}</h1>
+    <h2 class="text-xl italic text-right">{{ journal_entry.date_created}}</h2>
+  </div>
+  <div class="entry-content">{{ journal_entry.body}}</div>
+</div>
+{% endblock %}
