@@ -21,9 +21,18 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("journals/", views.JournalView.as_view(), name="journals"),
     path(
-        "journal/<slug:slug>",
+        "journals/create",
+        views.JournalCreateView.as_view(),
+        name="journal-form"),
+    path(
+        "journals/<slug:slug>",
         views.JournalEntryListView.as_view(),
         name="journal-entry-list",
+    ),
+    path(
+        "journals/<slug:slug>/new",
+        views.EntryCreateView.as_view(),
+        name="journal-entry-form"
     ),
     path("__reload__/", include("django_browser_reload.urls")),
 ]
